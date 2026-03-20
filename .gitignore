@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+venv_aurora/
+pyvenv.cfg
+pyvenv.cfg.bak
+
+# Large binary / generated files
+gesture_model.h5
+gesture_model_v2.h5
+hagrid_hand_data.csv
+hand_data.csv
+
+# Dataset images (too large for git)
+dataset/
+
+# Keras cache
+.keras/

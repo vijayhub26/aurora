@@ -7,12 +7,12 @@ from tensorflow.keras.models import load_model
 # Load the trained model
 model = load_model("gesture_model.h5")
 
-# MediaPipe setup
-mp_hands = mp.solutions.hands
+# MediaPipe setup (using direct path to solutions)
+from mediapipe.python.solutions import hands as mp_hands
+from mediapipe.python.solutions import drawing_utils as mp_drawing
 hands = mp_hands.Hands(static_image_mode=False,
                        max_num_hands=1,
                        min_detection_confidence=0.7)
-mp_drawing = mp.solutions.drawing_utils
 
 # Prediction buffer
 buffer_size = 5

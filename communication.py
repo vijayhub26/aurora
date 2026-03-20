@@ -13,12 +13,12 @@ model = load_model("gesture_model.h5")
 esp = serial.Serial('COM11', 9600)  # 🔧 Replace 'COM3' with your actual port
 time.sleep(2)  # wait for ESP32 to initialize
 
-# MediaPipe
-mp_hands = mp.solutions.hands
+# MediaPipe (using direct path to solutions)
+from mediapipe.python.solutions import hands as mp_hands
+from mediapipe.python.solutions import drawing_utils as mp_drawing
 hands = mp_hands.Hands(static_image_mode=False,
                        max_num_hands=1,
                        min_detection_confidence=0.7)
-mp_drawing = mp.solutions.drawing_utils
 
 # Buffer for stable output
 buffer_size = 5
